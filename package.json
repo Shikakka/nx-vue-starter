@@ -28,6 +28,7 @@
   },
   "private": true,
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
     "core-js": "^3.6.5",
     "express": "4.17.1",
     "tslib": "^2.0.0",
