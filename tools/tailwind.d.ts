@@ -4,6 +4,6 @@
  * @param fileGlobPattern pass a custom glob pattern to be used
  */
 export declare function createGlobPatternsForDependencies(
-    dirPath: string,
-    fileGlobPattern?: string
+	dirPath: string,
+	fileGlobPattern?: string
 ): string[];

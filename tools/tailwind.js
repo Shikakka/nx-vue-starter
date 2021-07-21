@@ -8,13 +8,13 @@ const generate_globs_1 = require('@nrwl/workspace/src/utilities/generate-globs')
  * @param fileGlobPattern pass a custom glob pattern to be used
  */
 function createGlobPatternsForDependencies(
-    dirPath,
-    fileGlobPattern = '/**/!(*.stories|*.spec).{tsx,jsx,js,vue,css,scss}'
+	dirPath,
+	fileGlobPattern = '/**/!(*.stories|*.spec).{tsx,jsx,js,vue,css,scss}'
 ) {
-    return generate_globs_1.createGlobPatternsForDependencies(
-        dirPath,
-        fileGlobPattern
-    );
+	return generate_globs_1.createGlobPatternsForDependencies(
+		dirPath,
+		fileGlobPattern
+	);
 }
 exports.createGlobPatternsForDependencies = createGlobPatternsForDependencies;
 //  based on the original NX.dev React function: @nrwl/react/tailwind
