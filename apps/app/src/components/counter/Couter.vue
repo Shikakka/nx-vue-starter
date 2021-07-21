@@ -1,5 +1,6 @@
 <template>
 	<div class="flex flex-col items-center">
+		<h1 class="font-semibold text-2xl">{{ name }}</h1>
 		<h2 class="font-semibold text-xl">
 			Clicked: {{ count }} times, count is {{ evenOrOdd }}.
 		</h2>
@@ -37,10 +38,23 @@ export default defineComponent({
 	setup() {
 		const store = useStore();
 
+		store.dispatch('setFirstName', 'Bro');
+
 		return {
 			count: computed(() => store.state.count),
 			evenOrOdd: computed(() => store.getters.evenOrOdd),
-			increment: () => store.dispatch('increment'),
+			name: computed(() => store.getters.fullName),
+			increment: () => {
+				store.dispatch('increment');
+				store.dispatch(
+					'setFirstName',
+					Math.random().toString(36).substring(7)
+				);
+				store.dispatch(
+					'setLastName',
+					Math.random().toString(36).substring(7)
+				);
+			},
 			decrement: () => store.dispatch('decrement'),
 			incrementIfOdd: () => store.dispatch('incrementIfOdd'),
 			incrementAsync: () => store.dispatch('incrementAsync'),
